@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        /*화살표 함수*/
+
+        // function sum(a, b) {
+        // return a + b
+        // }
+        
+        // //위의 함수를 화살표 함수로 바꾸려면?
+
+        // const sum = (a , b) => {
+        //     return a + b
+        // }
+
+        // return 까지도 생략 가능하다
+
+        // const sum = (a, b) => a + b
+        
+        // console.log(sum(1,2))
+
+        // console.log('-----------------')
+
+        // /*콜백 함수*/
+        
+        // const a = () => { console.log('A')}
+        // const b = () => { console.log('B')}
+
+        // a()//함수 호출 명령어
+        // b()
+
+        // //위의 코드를 콜백으로 만들어 보자
+        // const a = cb => {
+        //     console.log('A')
+        //     cb()
+        // }//매개변수가 1개일 때는 cb의 괄호를 생략해도 된다.
+
+        // // const b = () => {console.log('B')}
+
+        // a(b)
+
+        //------------------------------------
+
+        // const sum = (a, b) => a + b
+
+        // console.log(sum(1,2))
+        // console.log(sum(3,5))
+
+        // //setTimeout(함수, 지연시간) - 타이머 함수: 몇초후에 동작이 일어나게끔 하는 것, 애니메이션 효과 등에 쓰임
+        // setTimeout(()=>{console.log("hello")}, 2000)//2초 후에 hello가 뜬다.
+
+        // function hello(){
+        //     console.log("hello")
+        // }
+        // setTimeout(hello, 2000)
+        //위의 함수와 같은 기능이다. 내가 호출하는 것이 아니라, 상대가 호출해서 쓰게끔 하는 콜백함수
+        
+        // const sum = (a, b) => {
+        //     setTimeout(()=>{return a+b}, 1000)//이러면 안 나온다. return이 setTimeout내에서 이뤄져서 밖으로 안 나와서
+        // }//계산한 결과를 1초 후에 처리하게끔 하는 것
+        // console.log(sum(1,2))
+    
+        // const sum = (a, b, c) => {
+        //     setTimeout(c(a+b))
+        // }
+
+        // console.log(sum(1,2, (val)=>{console.log(val)}))//a+b를 세번째 값이 받을 수 있게끔 한 것
+        // //이것을 콜백함수라고 한다.
+
+        /* 재귀 함수 */
+
+        let cnt = 0
+        
+        const a = () => {
+            document.write('A', '<br>')
+            cnt++
+            if(cnt < 100000){
+                a()
+            }
+        }
+
+        a()
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

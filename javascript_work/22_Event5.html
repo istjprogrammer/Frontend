@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){     
+            const parentE1 = document.querySelector(".parent")
+            parentE1.addEventListener('wheel', ev => {
+                ev.preventDefault()
+                console.log("Wheel~")
+            }, false)// 매개변수가 1개일 경우 괄호를 생략 가능, 
+            //But 매개변수가 없거나 매개변수가 2개 이상일 경우 ()=>{} 이런식으로 써야 한다.
+
+            const anchorEl = document.querySelector("a")
+
+            anchorEl.addEventListener("click", ev => {
+                ev.preventDefault()
+                console.log("Click~")
+            }, false)
+        }
+    </script>
+</head>
+<body>
+    <div class="parent" style="height: 1000px;">
+        <div class = "class">
+            <a href = "https://github.com">github</a>
+        </div>
+    </div><!--.parent + 엔터키를 누르면 자동으로 div 테그 생성-->
+</body>
+</html>

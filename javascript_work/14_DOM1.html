@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Node Vs Element */
+    function fnLoad(){   
+    const parent = document.querySelector('.parent')
+       console.log(parent.childNodes)//전체 노드를 모두 출력시키는 것
+       console.log(parent.children)//요소들만 출력하는 것
+       console.log("----------------------------------------")
+
+       /*검색 api*/
+
+       const e1 = document.getElementById('child2')
+       //id는 전체를 통틀어서 하나밖에 없기에 가장 접근하기 편하다.
+       console.log(e1)
+
+       const e2 = document.getElementById('child123')
+       console.log(e2)
+
+       const e3 = document.querySelector('.child')
+       console.log(e3)
+
+       const e4 = document.querySelector('#child2')
+       console.log(e4)
+       //#child2로도 접근이 가능하다!
+
+       const e5 = document.querySelector('.child:last-child')
+       console.log(e5)
+
+       const e6 = document.querySelectorAll('.child')
+       console.log(e6)
+
+       e6.forEach((e) =>{ return console.log(e.textContent)})//계속 자동적으로 반복을 돌게 된다.
+       console.log(Array.from(e6).reverse())//e6을 Array라는 객체로 바꿔서 reverse를 쓰게끔 하는 코드
+
+       console.log("----------------------------------------")
+
+       const e7 = document.querySelector(".child")
+       console.log(e7.parentElement)
+       //이러면 첫번째 div를 찾는다.
+       console.log(e7.closest('div'))//e7과 가장 가까운 조상 요소를 출력한다. 즉 자기 자신이 가장 가까우므로 e7출력(child 1)
+       console.log(e7.closest('body'))//body중 가장 가까운 것은 fnload이므로 그것이 출력됨
+       console.log(e7.closest('.hello'))
+
+       console.log(e7.previousSibling)//옆의 요소들이 출력이 되므로 공백이 출력된다.
+       console.log(e7.nextSibling)//다음 요소들이 출력이 된다.
+       console.log(e7.previousSibling.parentElement)//div가 나오게 된다.
+
+       console.log(e7.firstElementChild)
+       console.log(e7.previousElementSibling)//노드에만 접근
+       console.log(e7.nextElementSibling)
+
+       console.log(e7.firstElementChild)
+       console.log(e7.lastElementChild)
+    }
+    </script>
+    <!--위와 같이 입력하면 노드 리스트가 밑에 쫙 뜬다.-->
+    <!--script의 순서가 위에 있으면 안된다. 실행 순서가 있기 때문에-->
+</head>
+<body onload = 'fnLoad()'>
+    <div class = "parent"><!--주석-->
+        <div class="child">1</div><!--.클래스명을 치고 탭을 누르면 자동적으로 div class로 만들어진다.-->
+        <!--위 노드는 단말 노드다. 왜냐하면 테그 안에는 테그를 넣을 수 있지만 텍스트 안에는 더 이상 넣을 수 없기 때문에-->
+        텍스트1
+        텍스트2
+        <div id="child2" class="child">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function(){
+        //1. 아이디 입력시 대문자로 자동 변환
+        const id = document.querySelector("input");
+        id.addEventListener("change", e => {
+            e.target.value = e.target.value.toString().toUpperCase();
+        });
+
+        //2.이메일이 올바르게 입력되지 않았을 때 경고문 출력
+        const email = Array.from(document.querySelectorAll("input"))[1];
+        email.addEventListener("change", e =>{
+          // let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}'); <-- 이메일 정규식
+            if(!(e.target.value.match(/\w+(?:@)+\w+\.+\w+/g))){
+                alert("올바른 형식이 아닙니다.");
+            };
+        });
+        
+        //3. 패스워드가 4글자 미만으로 입력되었을 때 경고문 출력
+        const pw = Array.from(document.querySelectorAll("input"))[2];
+        pw.addEventListener("change", e =>{
+            if(e.target.value.length < 4){
+                alert("비밀번호를 4글자 이상 입력해주세요.")
+            };
+        });
+   
+        //4. 주민번호 뒷자리가 1,3일경우 남자, 2,4일경우 여자에 체크되도록 하기
+        const ssn2 =  Array.from(document.querySelectorAll("input"))[4];
+        const male = Array.from(document.querySelectorAll("input"))[5];
+        const female = Array.from(document.querySelectorAll("input"))[6];
+        ssn2.addEventListener("change", e =>{
+            if(ssn2.value.substr(0, 1) === "1" || ssn2.value.substr(0, 1) === "3") {
+                male.checked = "true";
+            }else if(ssn2.value.substr(0, 1) === "2" || ssn2.value.substr(0, 1) === "4") {
+                female.checked = "true";
+            }
+        });
+        // 5. 빈칸이 있을경우 경고문 출력
+
+        const btn = document.getElementById("btnSubmit");
+
+            btn.addEventListener("click", ()=>{
+                if(id.value == "" || pw.value =="" || email.value ==""|| ssn1.value =="" || ssn2.value =="" || addr.value ==""){
+                    alert('빈칸을 입력해주세요.');
+                } else{
+                    alert('전송되었습니다.');
+                }
+            })
+        }
+        
+</script>
+<body>
+    <form name="f">
+        ID : <input type="text" name="id"/><br><br>
+        E-mail : <input type="text" name="email"/><br><br>
+        password: <input type="password" name="pw"/><br><br>
+        주민번호:<input type="text" name="ssn1" />
+        - <input type="text" name="ssn2" /><br><br>
+        남자<input type="radio" name="gender" value="남자" disabled/><br>
+        여자<input type="radio" name="gender" value="여자"disabled/><br><br>
+        주소 :<input type="text" name="addr"/>
+        <input type="button" value="전송" id="btnSubmit"/>
+        </form>
+</body>
+</html>

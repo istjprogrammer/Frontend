@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <h2>메모장</h2>
+    
+    <div id="app">
+        <h2>문자를 숫자로</h2>
+        <div>입력 값1(숫자 형변환): <input type="text" v-model.number="msg1"/></div>
+        <div>입력 값2(문자 형태로 계산): <input type="text" v-model.trim="msg2"/></div>
+        <div>입력값에 +10을 한 결과 : {{msg1 + 10}}</div><hr/>
+        <div>공백 제거 : {{msg2 + "님"}}</div><hr/>
+        
+    </div>    
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+            data(){
+                return {msg1:"",
+                        msg2:""}
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

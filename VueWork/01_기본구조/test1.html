@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Vue.js CDN 주소-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <!--결과 출력-->
+    <div id ="app">
+        <h2>기본 구조</h2>
+        <!--vue에서 처리한 결과를 보여줄 위치-->
+        {{message}}
+    </div>
+
+    <!--뷰를 만들기 위해서 script 부분을 짜주는 것이다.
+    <script>
+        Vue.createApp({
+            data : function(){
+                return { message : "Hello Vue!"}
+            }
+        }).mount("#app")//id가 있는 부분에 message를 출력하도록 요청
+    </script>
+    -->
+
+    <script>
+        const {createApp} = Vue
+        Vue.createApp({
+            data : function(){
+                return { message : "Hello Vue!"}
+            }
+        }).mount("#app")//id가 있는 부분에 message를 출력하도록 요청
+    </script>
+</body>
+</html>

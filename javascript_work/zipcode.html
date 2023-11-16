@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnAddress(si, gu, dong){
+            let addr = si + " " +  gu + " " + dong
+            // alert(addr)
+            opener.document.f.addr.value = addr//이렇게 하면 window.html이 opener역할을 한다.
+            window.close()//주소를 클릭하면 창이 닫힌다.
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="fnAddress('서울시', '강남구', '역삼동')">서울시 강남구 역삼동</a><br>
+    <a href="#" onclick="fnAddress('서울시', '서초구', '양재동')">서울시 서초구 양재동</a><br>
+    <a href="#" onclick="fnAddress('서울시', '송파구', '신천동')">서울시 송파구 신천동</a><br>
+    <br>
+    <form name ='f'>
+        <input type="button" value="주소 검색" onclick="fnOpen()"/>
+        <input type="text" name="addr"/>
+        
+    </form>
+</body>
+</html>

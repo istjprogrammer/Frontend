@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cnt = 0
+        function fnAppendItem(){
+            cnt++
+            //<div></div>
+            let newItem  = document.createElement("div")
+
+            //<div id='item1'></div> : id와 item1이라는 div테그가 클릭을 할 때마다 자동으로 생성
+            newItem.setAttribute('ID', `item${cnt}`)//${cnt}를 통해서 추가 버튼을 누를 때마다 숫자가 올라가게 셋팅
+
+            //<div id="item1"> 새로 추가된 아이템[1] <input type = "button"/></div>
+            newItem.innerHTML =/*HTML*/ `새로 추가된 아이템[${cnt}] 
+            <input type = 'button' value='삭제' onclick ='fnDeleteItem(${cnt})'/>`
+
+            let itemDiv = document.getElementById("itemList")
+            itemDiv.appendChild(newItem)//추가버튼을 누를 경우 삭제 버튼 생성
+        }
+
+        function fnDeleteItem(cnt){
+            let item = document.getElementById("item" + cnt)
+            if(item !== null){
+                item.parentNode.removeChild(item)//일단 부모노드로 빠져나와서 자식노드를 삭제하는 것으로 코드를 짰다.
+            }
+        }
+
+        function fnImageLoad(){ 
+            const containerEl = document.querySelector(".container")
+            const imgEl = document.createElement("img")
+            imgEl.src = "image/jennie.jpg"
+            containerEl.innerHTML = ""//글자가 사라지고 이미지만 뜨게 하는 코드
+            containerEl.append(imgEl)
+        }
+
+        window.onload = function(){
+           setTimeout(fnImageLoad, 3000)//3초 후 이미지 출력
+        }//현재 윈도우가 실행이 될 때 특정 기능을 실행하겠다는 코드
+    </script>
+
+</head>
+<body>
+    <input type = "button" value="추가" onclick="fnAppendItem()"/><!--추가버튼을 누를 때마다 하나씩 항목이 추가되도록 만드는 것-->
+    <div id = "itemList"></div>
+    <hr/>
+    <div class="container">
+        <h1>Image Loading...</h1>
+        3초 후에 이미지가 로드됩니다.<!--3초 후에 이미지가 뜨게 하는 코드를 작성-->
+    </div>    
+</body>
+</html>

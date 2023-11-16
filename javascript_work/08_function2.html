@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function getnumber(){
+            return 123
+        }
+        document.write(getnumber())
+        document.write(getnumber)//변수처럼 코드가 출력됨
+        //함수가 데이터 타입처럼 활용이 된다.
+        document.write(typeof getnumber())
+
+        //데이터 타입 확인
+        console.log("---------------------------")
+        console.log(typeof 'hello world'==='string')//True
+        console.log(typeof 123 === 'number')//True
+        console.log(typeof undefined == 'undefined')//True
+        console.log(typeof null === 'null')//False
+        console.log(typeof function(){}==='function')//True; 함수 데이터도 조건문으로 유도해서 쓸 수 있다.
+        
+        console.log(typeof null)//object; 이 경우 모든 객체의 부모격인 object가 출력됨
+        console.log(typeof null === 'object')//True
+        console.log(typeof [] === 'object')//True
+        console.log(typeof {} === 'object')//True
+
+        //objetc는 범용이라서 모든게 object가 될 수 있다.
+        console.log([].constructor)//생성자 라는 뜻이다. 
+        //모든 객체는 생성자 함수를 가지고 있다.
+        console.log([].constructor === Array)//True
+        console.log({}.constructor)
+        console.log({}.constructor === Object)//True
+
+        console.log(Object.prototype.toString.call(null))
+        console.log(Object.prototype.toString.call(null).slice(8, -1) == 'Null')
+        console.log(Object.prototype.toString.call([]))
+        console.log(Object.prototype.toString.call(123))
+        //왠만하면 타입오브나 컨스트럭터를 사용하는데 유일하게 null만 이렇게 한다.
+
+        function checkType(data){
+            return Object.prototype.toString.call(null).slice(8, -1)
+        }
+
+        console.log(checkType('Hello'))
+        console.log(checkType('123'))
+        console.log(checkType('[]'))
+        console.log(checkType('{}'))
+        console.log(checkType(null))
+        console.log(checkType())
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

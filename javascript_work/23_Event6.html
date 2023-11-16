@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grand{border:1px solid red}
+        #parent{border:1px solid green}
+        #child{border:1px solid black}
+    </style>
+    <script src="log.js"></script>
+    <script>
+        window.onload = function(){
+            const child = document.getElementById("child")
+            const parent = document.getElementById("parent")
+            const grand = document.getElementById("grand")
+
+            child.addEventListener("mousedown", (ev)=>{
+                log("Child~")
+                ev.stopPropagation()//버블링을 중단시키는 기능
+            } , {capture:false})//false는 캡쳐링을 막기 위한 기능
+
+            parent.addEventListener("mousedown", (ev)=>{
+                log("Parent~")
+                ev.stopPropagation()
+            } , false)
+
+            grand.addEventListener("mousedown", ()=>{log("Grand~")} , {once:true})//여러번 눌러도 1번만 출력되게끔 하는 조건
+
+            grand.addEventListener("wheel", ()=>{
+                console.log('grandeur')
+                // for(let i = 0; i<10; i++){
+                //     console.log(i)
+                // }
+            }, {passive:true})
+        }
+    </script>
+</head>
+<body>
+    <div id="grand">
+        grand 상단
+        <div id="parent">
+            parent의 상단
+            <div id="child">
+                child
+            </div>
+            parent의 하단
+        </div>
+        grand의 하단
+    </div>
+    <br>
+    <div id="debugConsole" style ="border:1px solid red;"></div>
+</body>
+</html>

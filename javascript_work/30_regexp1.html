@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str = 
+                `010-1234-5678
+                thesecond@gmail.com
+                Hello world!
+                https://www.omdbapi.com/?apikey=7035c60c&s=frozen
+                The quick brown fox jumps over the lazy dog.
+                hello@naver.com
+                http://localhost:1234
+                동해물과 백두산이 마르고 닳도록
+                abbcccddddeeeee.`
+        
+        /*생성자 방식*/
+        //const regexp = new RegExp('the', '')
+        //const regexp = new RegExp('the', 'g')//g는 전체를 검색하도록 하는 기능
+        //const regexp = new RegExp('the', 'gi')//gi는 대 소문자를 구분하지 않고 검색하는 기능
+
+        /*리터럴 방식*/
+        // const regexp = /the/gi
+        //위의 코드는 다음 코드와 같다. const regexp = new RegExp('the', 'gi')
+
+        // console.log(str.match(regexp))
+
+        /*메서드*/
+        // const regexp = /fox/gi //fox라는 문자열을 대소문자를 구별하지 않고 찾는 기능
+        // console.log(regexp.test(str))//있으면 true출력
+        // console.log(str.match(regexp))
+        // console.log(str.replace(regexp, 'cat'))
+
+        /* 플래그 */
+        // console.log(str.match(/the/))
+        // console.log(str.match(/the/g))
+        // console.log(str.match(/the/gi))
+        // console.log(str.match(/\.$/gi))// 이 코드는 맨 마지막에 .이 있는 단어를 찾는 코드다.
+        // console.log(str.match(/\.$/gim))// 이 코드는 각 줄마다 .이 있는 단어를 찾는 코드다.
+        // .은 다른 문자를 대체하기 위해서 있다. \은 escape 문자를 나타낸다
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

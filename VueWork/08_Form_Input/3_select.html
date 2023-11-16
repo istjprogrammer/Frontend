@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse</title>
+    <script src="../vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <select v-model="msg1">
+                <option value="">선택</option>
+                <option value="철수">철수</option>
+                <option value="영희">영희</option>
+                <option value="영수">영수</option>
+            </select>
+        </div>
+        <div>{{msg1}}</div>
+        <hr>
+        <div>
+            <select v-model="msg2">
+                <option value="">선택</option>
+                <option v-for="data in selList" :value="data">{{data}}</option>
+            </select>
+        </div>
+        <div>{{msg2}}</div>
+        <hr>
+        <div>
+            <select v-model="msg3">
+                <option value="">선택</option>
+                <option v-for="data in selList2" :value="data.value">{{data.label}}</option>
+            </select>
+        </div>
+        <div>{{msg3}}</div>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    msg1:"",
+                    selList:["권정호", "창순" , "선녀"],
+                    msg2:"",
+                    selList2:[
+                        {value:"김민호", label:"김민호 입니다."},
+                        {value:"왕수", label:"왕수 입니다."},
+                        {value:"배재원", label:"배재원 입니다."}
+                    ],
+                    msg3:""
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

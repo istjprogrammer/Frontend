@@ -1,0 +1,6 @@
+{
+    "conpilerOptions" : {
+        "noEmitOnError" : true,
+        "strictNullChecks": true
+    }
+}

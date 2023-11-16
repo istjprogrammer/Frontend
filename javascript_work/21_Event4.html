@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="log.js"></script>
+    <script>
+        //버튼 기능에 대한 함수
+        window.onload = () => {
+            let btn = document.getElementById("btn")
+            btn.addEventListener("click", (ev)=>{
+            //사건의 정보를 브리핑하는 코드, ev라는 매개변수에 이벤트 정보가 들어간다.
+            log(ev.target)
+            console.log(ev.target)
+
+            log(ev.target.id)
+            log(ev.target.type)
+            }, false)
+
+            btn.addEventListener("keydown", (ev)=>{
+                log(ev.key)
+            } , false)//맨 마지막 값은 입력을 안해도 자동으로 false로 인식함
+            //key라는 값의 속성은 내가 키보드에서 어떤 값을 입력했는지를 나타낸다.
+
+            btn.addEventListener("wheel", (ev)=>{
+                console.log(ev)//wheel은 버튼에 포인터를 올려놓고 휠을 움직이면 그 값이 기록되는 것을 뜻한다.
+            })
+        }
+    </script>
+</head>
+<body>
+    <!--이벤트가 발생하는 장소이다.-->
+    <input type="button" value="버튼" id="btn"/>
+    <br><br>
+    <!--아래 코드는 과거에는 썼지만 지금은 잘 쓰지 않는 코드이다.-->
+    <div id="debugConsole" style ="border:1px solid red;"></div>
+</body>
+</html>

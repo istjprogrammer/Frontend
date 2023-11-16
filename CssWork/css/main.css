@@ -1,0 +1,13 @@
+@import url(./css/box.css);
+
+h1  {color:hotpink;
+     background-color: black; 
+     font-size: 50pt; 
+     text-align: center;}
+
+span{color: black; 
+     background-color: hotpink; 
+     font-size: 50pt; 
+     font-family: fantasy;} 
+
+body{color: hotpink;}

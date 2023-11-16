@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fncall1(){
+            alert("fncall1 함수 호출됨")
+        }
+
+        function fncall2(){
+            alert("fncall2 함수 호출됨")
+        }
+
+        window.onload = function() {
+            let btn = document.getElementById("btn")
+            // btn.addEventListener("click", fncall1, false)
+            // btn.addEventListener("click", fncall2, false)
+
+            btn.onclick = fncall1
+            btn.onclick = fncall2
+            
+            btn.removeEventListener("click", fncall1, false)
+        }
+        //html을 건드리지 않고 최대한 스크립트에 함수를 작성할 수 있다.
+    </script>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn"/>
+</body>
+</html>

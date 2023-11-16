@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //첫번째 시도 : 전체 노드를 그려보기
+        console.log("전체 노드를 그려보기")
+        function Call(){        
+        const all = document.querySelector(".all")
+        console.log(all.childNodes)
+
+        //두번째 시도 : 요소들만 나타내기
+        console.log("요소들만 나타내기")
+        console.log(all.children)
+            
+        //세번째 시도 : ID로 해당되는 요소들 가져오기
+        const a1 = document.getElementById('0001')
+        console.log("ID 0001에 해당되는 요소들 가져오기")
+        console.log(a1)
+
+        //네번째 시도 : 클래스명으로 해당되는 클래스만 출력하기
+        const a2 = document.querySelector('.innerfirst')
+        console.log('클래스명 innerfirst에 해당되는 클래스만 출력')
+        console.log(a2)
+    }
+
+    </script>
+</head>
+
+<body onload = 'Call()'>
+    <div class="all">
+
+        <p class="innerfirst" id="0001">
+            Happy Week
+            <a href="https://chat.netsong7.net" id="chat-link">netsong7</a>
+        </p>
+
+        <p class="innersecond" id="0002">
+            Happy Programming
+            <a href="https://www.w3schools.com" id="w3-link">W3schools</a>
+        </p>
+
+        <p class="outerfirst" id="0003">
+            <b>
+                Programming is funny
+            </b>
+        </p>
+
+        <p class="outersecond" id="0004">
+            <b>
+                All or Nothing!
+            </b>
+        </p>
+        
+    </div>
+</body>
+</html>

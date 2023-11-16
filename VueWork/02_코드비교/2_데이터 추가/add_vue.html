@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js CDN 주소-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>    
+    <div id="app">
+        <ul class="list">
+            <li v-for="user in data.list">name={{user}}</li>
+        </ul>
+        <div>
+            <p>데이터 추가</p>
+            <p>
+                <span>name:<input type="text" class="user-name" v-model="newUser"></span><br>
+                <p>
+                    <button class="btn-add-user" v-on:click="addUser"> 추가</button>
+                </p>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var data={
+            list:["user01", "user02", "user03"],
+            newUser:""
+        }
+        const {createApp} = Vue 
+
+        createApp({
+            data() {
+                return {data : data};
+            },
+            methods : {
+                addUser : function(){
+                    this.data.list.push(this.newUser)
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

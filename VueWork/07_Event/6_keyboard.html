@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--Vue.js 추가-->
+  <script src="../vue.global.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <input type="text" @keydown="onKeyDown1($event)">일반 키보드 down <br>
+      <input type="text" @keydown.enter="onKeyDown_enter($event)">enter키 입력시 <br>
+      <input type="text" @keydown.tab="onKeyDown_tab($event)">tab키 입력시 <br>
+      <input type="text" @keydown.delete="onKeyDown_delete($event)">delete키 입력시 <br>
+      <input type="text" @keydown.ctrl.delete="onKeyDown_ctrl_delete($event)">ctrl+delete키 입력시 <br>
+    </div>
+    <div v-html="message"> </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+    createApp({
+      data() {
+        return {
+          count: 0,
+          message: ""
+        }
+      },
+      methods: {
+        onKeyDown1(event) {
+          this.count++;
+          this.message += this.count + "=" + event.key + "<br>"
+        },
+        onKeyDown_enter(event) { this.message += "enter입력<br>" },
+        onKeyDown_tab(event) { this.message += "tab입력<br>" },
+        onKeyDown_delete(event) { this.message += "delete입력<br>" },
+        onKeyDown_ctrl_delete(event) { this.message += "ctrl+delete입력<br>" }
+      }
+    }).mount("#app")
+  </script>
+</body>
+
+</html>

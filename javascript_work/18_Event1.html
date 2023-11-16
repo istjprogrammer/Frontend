@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fnOut(){
+            document.getElementById('btn').style.backgroundColor='lightgray'
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="btn" id="btn" value="i am a button"
+    onmouseover="this.style.backgroundColor='ivory'" 
+    onmouseout = "fnOut()"/><!--마우스를 올려놨을 때 자바스크립트 문장 실행-->
+    <!--this로 현재 주소값을 나타낸다.-->
+</body>
+</html>  

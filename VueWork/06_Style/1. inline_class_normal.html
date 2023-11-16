@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .active{
+            border:4px solid #f00;
+        }
+        .active2{
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="onToggle">토글</button>
+        <div :class="{active:isActive, active2:isActive2}">테스트 입니다.</div>
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+            data(){
+                return {isActive : false,
+                        isActive2 : false
+                    }
+            },
+            methods:{
+                onToggle(){
+                    this.isActive = !this.isActive;
+                    this.isActive2 = !this.isActive2;
+                }
+            }            
+        }).mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Vue.js CDN 주소-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--jquery CDN 주소-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--결과 출력-->
+    <div id ="app">
+        <h2>기본 구조</h2>
+        <!--vue에서 처리한 결과를 보여줄 위치-->
+        {{message}}
+    </div>
+
+    <div id="jquery">
+        <h2>JQuery로 출력한 내용</h2>
+        <p class="sub1"></p>
+    </div>
+
+    <script>
+        const {createApp} = Vue
+        Vue.createApp({
+            data : function(){
+                return { message : "Hello Vue!"}
+            }
+        }).mount("#app")//div id일경우에는 #으로 한다.(class일 경우에는 .으로 한다.)
+        
+        $(".sub1").html("안녕하세요. 이 내용은 jQuery로 만들어졌습니다.")
+    </script>
+</body>
+</html>

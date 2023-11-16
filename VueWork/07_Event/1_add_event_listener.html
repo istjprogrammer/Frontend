@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="../vue.global.js"></script>
+    
+</head>
+<body>
+
+    <div id="app">
+      <button @click="addCount($event)">실행</button>
+      <button @click="count+=2">실행2</button>
+      <div>
+        count = {{count}}
+      </div>    
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+           data(){
+            return {count : 1}
+           },
+           methods: {
+                addCount(){
+                    this.count++;
+                    console.log("count:", event)
+                }
+           }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

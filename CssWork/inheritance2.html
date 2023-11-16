@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .parent {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .child {
+            width: 100px;
+            height: inherit; 
+            background-color: yellow;
+            position: fixed;
+            top: 100px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent"><!--.parent를 입력하고 tab키를 누르면 div테그로 완성된다.-->
+        <div class="child"></div>
+    </div>
+</body>
+</html>

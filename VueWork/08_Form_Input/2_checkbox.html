@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <h2>메모장</h2>
+    
+    <div id="app">
+        <div> 입력값(true, false) : <input type="checkbox" v-model="msg1"/></div>
+        <div> 결과 : {{msg1}}</div>
+        <hr>
+        <div> 입력값(참, 거짓) : <input type="checkbox" v-model="msg2" true-value="참" false-value="거짓"/></div>
+        <div> 결과 : {{msg2}}</div>
+        <hr>
+        <div> 
+            <label><input type="checkbox" v-model="msglist" value="현재짱"/>현재짱</label><br>
+            <label><input type="checkbox" v-model="msglist" value="guswo"/>guswo</label><br>
+            <label><input type="checkbox" v-model="msglist" value="정도경"/>정도경</label>
+        </div>        
+        <div> {{msglist}} </div>
+        <hr>
+        <div> 
+            <label><input type="radio" v-model="rdomsg" value="현재짱"/>현재짱</label><br>
+            <label><input type="radio" v-model="rdomsg" value="guswo"/>guswo</label><br>
+            <label><input type="radio" v-model="rdomsg" value="정도경"/>정도경</label>      
+        </div>  
+        <div> {{rdomsg}} </div>
+        <hr>
+        <div v-for="data in rdolist"> 
+            <label><input type="radio" v-model="rdomsg2" :value="data"/>{{data}}</label><br>
+        </div>
+        <div>{{rdomsg2}}</div>
+    </div>    
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+            data(){
+                return {
+                    msg1 : true,
+                    msg2 : "거짓",
+                    msglist : ["정도경"],
+                    rdomsg : "현재짱",
+                    rdolist : ["현재짱","guswo","정도경","권정호"],
+                    rdomsg2 : "guswo"
+                }    
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

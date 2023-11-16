@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // String
+        //문자형으로 데이터를 저장하고 싶다면 아래와 같이 ""로 묶어주면 된다.
+        //숫자도 ""로 묶여 있으면 무조건 문자열이다.
+        //쌍따옴표나 홑따옴표는 차이가 없다.(자바스크립트에서는)
+        let string1 = "Hello"
+        let string2 = '1234'
+        //Backtick은 아래와 같다. 특징으로는 ${}를 사용해서 string1이나 string2 처럼 바깥의 값까지 끌어다가 쓸 수 있다.
+        //즉 동적 처리가 가능하다.
+        //아래와 같이 ${}안에 들어가는 값을 literal이라고 하는데, 이는 실제 들어가는 값을 의미한다.
+        let string3 = `Hello ${string2}`
+        console.log(string1,string2,string3)
+        console.log("------------------------------------")
+        /* Number */
+        //---------------------------------------
+        let num1 = 100 //쌍따옴표가 없으면 숫자이다.
+        console.log(num1 + 10)//숫자기 때문에 연산도 가능하다.
+
+        let num2 = 3.14
+        let num3 = .15
+        console.log(num1 + num2)
+        console.log(typeof(string1), typeof(num1))
+        console.log(num1 + string2)//원래 자료형이 다르면 에러메세지가 뜨지만, 자바스크립트는 서로 연결을 해버린다.
+        console.log(num1 + undefined)//이 경우 nan이라고 출력된다. Not a number 즉 숫자가 아니라는 뜻
+        console.log(typeof(num1 + undefined))//이 경우 숫자라고 출력이 된다. undefined는 숫자처럼 사용할 수 없다는 뜻이다.
+
+        num1 = 0.1
+        num2 = 0.2
+        console.log(num1 + num2)
+        console.log((num1 + num2).toFixed(1))//소수 첫째자리까지로 값을 고정시키는 것(뒤의 오차는 잘라버림)
+        console.log(typeof((num1 + num2)).toFixed(1))//tofixed를 사용하면 자료형으로는 문자로 출력함
+        console.log(typeof(Number((num1 + num2).toFixed(1))))//Number로 바꿔준다.
+        console.log("------------------------------------")
+
+        //boolen은 True 혹은 Fasle 이렇게 2가지 값만 존재하는 경우다.
+        let b1 = true
+        let b2 = false
+        console.log(b1,b2)
+        console.log("------------------------------------")
+
+        //undefined와 null은 둘 다 같은 종류이다.
+        //null이라는 표현은 굉장히 많이 쓰이는 표현이다.
+        //값이 없다는 것을 표시하기 위한 값이다.
+        //undefined는 컴퓨터에서 자동으로 출력, 내가 직접 입력하는 것은 null이다.
+
+        let age = null
+        console.log(age)//이 경우 null이라고 나온다.
+
+        let height
+        console.log(height)//이 경우 undefined라고 나온다.
+
+        //object
+        //object의 목적은 객체이다. 포장지라고 생각하면 된다.
+        console.log("------------------------------------")
+
+        const user1 = new Object()//새로운 객체 생성, 빈 보따리를 만든 것
+        user1.name = '광수'//접근연산자 .를 활용하여 user라는 보따리에 접근해서 데이터를 넣는다는 뜻
+        user1.age = 30//user라는 보따리 안에 age,height가 들어가 있다는 뜻이다.
+        user1.height = 180
+        console.log(user1)
+        console.log(user1.name, user1.age, user1.height)
+        console.log(user1['name'], user1['age'], user1['height'])
+
+        const user2 = {
+            name: "영철",
+            age: 25,
+            height: 190
+        }
+        console.log(user2)
+        console.log(user2.name, user2.age, user2.height)
+        console.log(user2['name'], user2['age'], user2['height'])
+
+        const userA = {
+            name : '영자',
+            age : 30
+        }
+        const userB = {
+            name : '순자',
+            age : 35,
+            origin : userA 
+            //이 경우 B라는 보따리 안에 A라는 보따리도 같이 포함이 되는 것이다.
+            //예능에 보면 부캐라는 말이 나오는데, 그것과 같다. 
+        }
+        console.log(userB)
+        console.log(userB.name, userB.age)
+        console.log(userB.origin.name, userB.origin.age)
+        console.log(userB['origin']['name'], userB['origin']['age'])
+        console.log('---------------------------------------')
+
+
+    //array
+    //array도 객체를 나타낸다. 배열을 의미하는데, 주로 수학시간에 배웠던 배열을 뜻한다.
+    //배열부터는 알고리즘의 시작이라고 한다.
+        //배열을 활용하면 이렇게 깔끔하게 변수를 저장할 수 있다.
+        let fruit= ['apple', 'banana', 'kiwi']
+        console.log(fruit)
+        console.log(fruit[0], fruit[1], fruit[2])//배열로 묶으면 출력도 간편하게 할 수 있다.
+        console.log(fruit.length)
+        //배열은 원래 같은 것끼리 묶어야 한다.
+        //자바스크립트는 많은 편의기능이 추가가 되어서, 숫자와 문자를 같이 쓸 수 있는 것이다.
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

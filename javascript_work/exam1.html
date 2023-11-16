@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //prompt를 통해 입력받은 숫자만큼 반복을 돌려서 짝수의 합과 홀수의 합을 출력하시오
+        let input = prompt("숫자를 입력하세요")
+        let holsu = 0
+        let jaksu = 0
+        for(let i=0; i<=input; i++){
+            if(i % 2 == 0){
+                jaksu+=i;
+            }
+            else{
+                holsu+=i;
+            }
+        }
+        console.log("홀수의 합:", holsu)
+        console.log("짝수의 합:", jaksu)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

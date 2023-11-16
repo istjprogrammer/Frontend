@@ -1,0 +1,89 @@
+.container{
+    padding: 50px 0;
+    background-color: black;
+}
+
+.container .members{
+    display: flex;
+    /* 자동으로 줄바꿈을 할 수 있게끔 만들어주려면? 아래와 같이 flex-wrap을 쓰면 됨*/
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 만약 가로길이를 설정하지 않으면 전체가 설정이 된다. */
+    /* max-width: 700px; */
+    /* 폭을 고정시켜서 늘리거나 줄여도 변동되는 것을 줄일 수 있다 */
+    margin: 0 auto;
+    /* max-width: 660px; */
+    padding: 40px 20px;
+}
+
+.container .members .member{
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    border: 5px solid pink;
+    /* 두께, 실선, 선 색상 */
+    /* 마우스를 올렸을 때 기울임이 유지되게 하려면? hover에 transform 추가 */
+    border-radius: 5px;
+    /* padding이나 테두리를 값을 줘도 모양을 유지하려면 box-sizing을 사용함 */
+    box-sizing: border-box;
+    /* 배경 색상과 그림이 속성별로 따로따로 바뀌게 하려면? */
+    transition: transform 1s; background-color: 0.5s;
+    /* 넘치는 부분을 자르기 위해서는 overflow : hidden을 활용한다 */
+    overflow: hidden;
+}
+
+.container .members .member:hover{
+    background-color: pink;
+    /* 맨 위에 튀어나오게 하기 위해서 z-index를 사용한다 */
+    z-index: 1;
+    transform: scale(1.2);
+}
+
+
+.container .members .member:nth-child(1){
+    width: 300px;
+    height: 400px;
+    background-image: url(image/jennie.jpg);
+    background-size: cover;
+}
+.container .members .member:nth-child(2){
+    width: 300px;
+    height: 400px;
+    background-image: url(image/jisoo.jpg);
+    background-size: cover;
+}
+.container .members .member:nth-child(3){
+    width: 300px;
+    height: 400px;
+    background-image: url(image/lisa.jpg);
+    background-size: cover;
+}
+.container .members .member:nth-child(4){
+    width: 300px;
+    height: 400px;
+    background-image: url(image/rose.jpg);
+    background-size: cover;
+}
+
+.container .logo{
+    /* 가운데 정렬을 하고 싶다면? margin을 auto로 설정 */
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.container .all .photo{
+    width: fit-content;
+    height: fit-content;
+    transition: transform 1s; background-color: 0.5s;
+    margin: 0px auto;
+    border: 5px solid pink;
+    box-sizing: content-box;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.container .all .photo:hover{
+    z-index: 1;
+    transform: scale(1.2);
+}

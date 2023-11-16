@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            const parent = document.querySelector(".parent")
+            const children = document.querySelectorAll(".child")
+
+            // children.foreach(el => {
+            //     el.addEventListener("click", ev => {
+            //         console.log(ev.target.textContent)
+            //     })
+            // })//child객체의 개수만큼 반복을 돌려준다.
+
+            parent.addEventListener("click", ev => {
+               const ch = ev.target.closest(".child")
+
+               if(ch){
+                console.log(ch.textContent)
+               }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+    </div>
+</body>
+</html>

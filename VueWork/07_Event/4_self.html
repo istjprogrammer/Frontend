@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="../vue.global.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+      <div @click.self="parent($event)">
+        여기를 클릭하세요.<br>
+        <button>실행</button>
+        <button>실행</button>        
+      </div>
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+          methods : {
+            parent(){
+              alert("div에서 발생한 이벤트")
+              console.log("event=", event)
+            }
+          }
+        }).mount("#app")
+    </script>
+</body>
+</html>

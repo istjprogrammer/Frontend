@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        a:hover {color: red; }
+        /* 마우스를 올렸을 때만 빨간색이 뜨게 하기 위해서 :을 사용 */
+
+        a:active {color : ivory}
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: 1s;
+        }
+
+        .box:hover {
+            width: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://youtube.com" target="_blank"> 쉴때는 유튜브가 국룰</a>
+    <!-- 마우스를 올리면 손바닥 모양이 뜨는게 호버 기능이다. -->
+    <br><br>
+    <div class ="box"></div>
+    <!--만약 마우스를 올렸을 때 상자가 길어지는 애니메이션 효과를 주고 싶으면?
+    hover를 사용하여 width를 300으로 늘리면 된다.
+    hover클래스에 transition 을 사용하면 시간을 지정해서 1초 후에 바뀌게끔도 할 수 있다. -->
+
+</body>
+</html>

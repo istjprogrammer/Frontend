@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js CDN 주소-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--jquery CDN 주소-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul class="list"></ul>
+        <div>
+            <p>데이터 추가</p>
+            <p>
+                <span>name:<input type="text" class="user-name"></span><br>
+                <p>
+                    <button class="btn-add-user"> 추가</button>
+                </p>
+            </div>
+        </div>
+
+        <script>
+            const data = {
+                list: ["user01", "user02", "user03"]
+            }
+
+            const populateUserList = () => {
+                const userList = document.querySelector("#app .list");
+                data.list.forEach(user => {
+                    const li = document.createElement("li");
+                    li.textContent = `name = ${user}`;
+                    userList.appendChild(li);
+                });
+            }
+
+            populateUserList();
+
+            const btnAddUser = document.querySelector(".btn-add-user");
+            btnAddUser.addEventListener("click", () => {
+                const userNameInput = document.querySelector(".user-name");
+                const newUser = userNameInput.value;
+
+                if (newUser) {
+                    data.list.push(newUser);
+
+                    const userList = document.querySelector("#app .list");
+                    const li = document.createElement("li");
+                    li.textContent = `name = ${newUser}`;
+                    userList.appendChild(li);
+
+                    userNameInput.value = "";
+                }
+            });
+        </script>
+</body>
+</html>

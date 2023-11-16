@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 400px;
+            background-color: orange;
+        }
+
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+
+    <!-- https://swiperjs.com -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div>Hello World</div>
+    <ul>
+        <li>사과</li>
+        <li>배</li>
+    </ul>
+    <!--상태를 나타낼 때는 이렇게 쓴다-->
+
+    <div class="btn btn--primary"></div><!--요소의 상태를 표시-->
+    <div class="btn btn--success"></div>
+    <div class="btn btn--error"></div>
+    <hr />
+
+    <!-- https://swiperjs.com -->
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+        autoplay: true       
+    });
+</script>

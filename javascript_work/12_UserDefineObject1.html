@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Book = function(title, author){
+            this.title = title
+            this.author = author    
+            //this를 안 써도 오류가 나지는 않는다.
+        }//익명함수와 화살표함수는 다르다.
+
+        // Book('노인과 바다','헤밍웨이')
+        //그냥 함수였다면 이렇게 호출하면 되지만 객체도 함수처럼 사용하는데 지장이 없다.
+        //문법적으로 명확하지 않아서 처음에는 설명이 어렵다.
+
+
+        let b1 = new Book('노인과 바다', '헤밍웨이')//객체일때는 이렇게 new를 해줘야 한다.
+        document.write(b1.title, b1.author)//이렇게 쓰는게 객체를 올바르게 쓰는 방법이다.
+                                        //앞으로 타이틀은 계속 만들어 질 것이기 때문에 this를 활용하여 현재 내가 어느 위치에서
+                                       //받아 쓰고 싶일 때 쓰면 된다.
+                                         //객체는 반드시 this가 있어야 한다.
+        let b2 = new Book('목민심서', '정약용')
+        document.write(b2.title, b2.author)//똑같은 author이 있더라도 똑같은 메모리가 아니다.
+
+        Book.prototype.setValue = function(title, author){
+            this.title = title
+            this.author = author
+        }//book이라는 객체 안에 setValue라는 함수를 만들겠다는 뜻
+        //모든 객체는 setValue라는 함수를 갖고, 새로운 book을 만들면 또다시 setvalue라는 함수가 생성된다.
+
+
+        b1.setValue('원칙', '레이달리오')//b1안에 setvalue라는 함수를 호출
+        document.write(b1.title, b1.author)//따로따로 저장된 데이터를 밑의 함수에서 수정할 수 있다.
+
+
+        Book.prototype.toString = function(){
+            return this.title + '[' + this.author + ']'
+        }
+
+        console.log(b1.toString())//b1이 100번지라고 가정하면 b1의 제목과 작가를 출력하라는 뜻이다.
+        console.log(b2.toString())
+
+        //메서드를 쓰는 이유는 프로토타입 때문에 그렇게 하는 것이다.
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

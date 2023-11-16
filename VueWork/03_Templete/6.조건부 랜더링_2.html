@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1> v-if </h1>
+    
+    <div id="app">
+        <!-- 클릭을 하면 "onToggle"이라는 함수를 실행하겠다. -->
+        <!-- v-on: -> @ 로 생략 -->
+        <button @click="onToggle">토글</button>
+
+        <template v-if="visible">  
+        <!-- visible의 조건이 true냐 false냐에 따라 태그 내용을 처리함 -->
+            <div>test1</div>
+            <div>test2</div>
+            <div>test3</div>
+        </template>
+        <!--조건이 맞지 않을 때 처리를 할 수 있다.-->
+        <template v-else>
+            <div>else test1</div>
+            <div>else test2</div>
+            <div>else test3</div>
+        </template>
+
+        <div id="hakjum">
+            <div>
+                점수 입력 : <input type="text" v-model="value"/>
+            </div>
+            <div v-if="value =='a'">A 입니다</div>
+            <div v-else-if="value =='b'">B 입니다</div>
+            <div v-else-if="value =='c'">C 입니다</div>
+            <div v-else-if="value =='d'">D 입니다</div>
+            <div v-else>값을 입력해주세요</div>
+        </div>
+    </div>
+
+    
+    <script>
+        const {createApp} = Vue
+        createApp({
+            data() {
+                return {visible : true, value:""}
+            },
+            methods : {
+                onToggle() {
+                    // 토글 연산자, bool 타입
+                    this.visible = !this.visible
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

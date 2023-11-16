@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <hr>
+    피자 종류는 다음과 같다.<br>
+    치즈 퐁듀 파이어 미트<br>
+    블록버스터4<br>
+    글로벌 레전드4<br>
+    블랙앵거스 스테이크<br>
+    베스트 콰트로<br>
+    블랙타이거 슈림프<br>
+    <hr>
+
+    고객명 : <input type='text'/><br><br>
+    전화번호 : <input type='text'/><br><br>
+    e-mail : <input type='text'/><br><br>
+    피자선택 : 
+    <select>
+        <option>피자를 선택하세요</option>
+        <option>치즈 퐁듀 파이어 미트</option>
+        <option >블록버스터4</option>
+        <option>글로벌 레전드4</option>
+        <option>블랙앵거스 스테이크</option>
+        <option>베스트 콰트로</option>
+        <option>블랙타이거 슈림프</option>
+    </select> <br><br>
+    
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" name="size">small<br>
+            <input type="radio" name="size">medium<br>
+            <input type="radio" name="size">large<br>
+        </fieldset><br><br>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="checkbox" name="topping" id="t1"/> <label for="t1">베이컨</label><br>
+            <input type="checkbox" name="topping"/> <label>치즈</label><br>
+            <input type="checkbox" name="topping"/> <label>양파</label><br>   
+            <input type="checkbox" name="topping"/> <label>버섯</label><br>   
+        </fieldset><br><br>
+
+    희망배송시간: <input type="time" value="xxx" min="yyy" max="zzz"><br><br>
+    배송시 요청사항: <textarea rows="3" cols="30"></textarea><br><br>
+    <button>주문하기</button>
+</body>
+</html>

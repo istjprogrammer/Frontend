@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fnload(){
+            //createElement()
+
+            let divEl = document.createElement("div")
+            console.log(divEl)
+            console.log("-------------------------------")
+
+            //pretend(), append()
+
+            let parentEl = document.querySelector('.parent')
+
+            divEl = document.createElement("div")
+            divEl.textContent = "Hello~"//div 테그 내에 hello가 출력되도록 하는 것
+
+            parentEl.prepend(new Comment(' 이것은 주석입니다. '))
+            // parentE1.append(divE1)
+            // parentE1.append("World!")
+            parentEl.append(divEl, "World")
+
+            //insertAdjacentElement()
+
+            let childEl = document.querySelector(".child")
+            let newSpan = document.createElement("span")
+            newSpan.textContent = "Hello"
+
+            childEl.insertAdjacentElement('afterbegin', newSpan)
+
+            //contains()
+            parentEl = document.querySelector(".parent")
+            childEl = document.querySelector(".child")
+
+            console.log(parentEl.contains(childEl))
+            console.log(document.body.contains(parentEl))
+            console.log(parentEl.contains(parentEl))
+
+            //innerHTML
+            parentEl = document.querySelector(".parent")
+            console.log(parentEl.innerHTML)
+
+            parentEl.innerHTML =/*html*/ `<div style="border: 4px solid;">
+                <span style="color: red;">Hello~<span>
+                <span style="color: red;">Hello~<span>
+                </div>`
+
+            childEl = document.querySelector(".child")
+            let str = "Hello World"
+            let obj = {a:1, b:2}
+
+            parentEl.dataset.helloworld = str
+            parentEl.dataset.object = JSON.stringify(obj)
+
+            console.log(parentEl.dataset.helloworld)
+            console.log(parentEl.dataset.object)
+            
+            //classList
+            parentEl = document.querySelector(".parent")
+
+            parentEl.classList.add("active")
+            console.log(parentEl.classList.contains('active'))
+
+            parentEl.classList.remove("active")
+            console.log(parentEl.classList.contains('active'))
+
+            parentEl.addEventListener("click", ()=>{
+                parentEl.classList.toggle('active')
+            })
+
+            //style
+            parentEl = document.querySelector(".parent")
+
+            //개별적으로 지정
+            // parentEl.style.width = '100px'
+            // parentEl.style.fontSize ='20px'
+            // parentEl.style.backgroundColor = 'green'
+
+            //한번에 지정
+            Object.assign(parentEl.style,{
+                width:'100px', fontSize:'20px', backgroundColor:'green'})
+            console.log(parentEl.style)
+            console.log(parentEl.style.width)
+            console.log(parentEl.style.fontSize)
+            console.log(parentEl.style.backgroundColor)
+        }
+        
+    </script>
+</head>
+<body onload="fnload()">
+    <div class = "parent"> 
+        <div class = "child">1</div>
+        <div class = "child">2</div>
+    </div>
+</body>
+</html>

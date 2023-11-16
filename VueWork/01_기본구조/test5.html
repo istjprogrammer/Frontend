@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Vue.js CDN 주소-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <h1>LifeCycle</h1>
+    <!--결과 출력-->
+    <div>
+        <h2>기본 구조</h2>        
+        <!--vue에서 처리한 결과를 보여줄 위치-->
+        <p id="app1">
+        {{name}}, count={{count}}
+        </p>
+    </div>
+
+    <script>
+        const {createApp} = Vue
+        createApp({
+            data : function(){
+                return { name : "Vue!", count:0}
+            },
+            beforeCreate : function(){
+                console.log("1. beforeCreate = ", this.name);
+            },
+            created : function(){
+                console.log("2. create = ", this.name);
+                this.test();
+            },
+            beforeMount : function(){
+                console.log("3. beforeMount = ", this.name);
+            },
+            mounted : function(){
+                console.log("4. mounted = ", this.name);
+            },
+            beforeUpdate : function(){
+                console.log("11. beforeUpdate = ", this.name, this.count);
+            },
+            updated : function(){
+                console.log("12. updated = ", this.name);
+            },
+            methods : {
+                test : function(){
+                    setInterval(()=>{ this.count++; }, 500)
+                }
+            }
+        }).mount("#app1")//id가 있는 부분에 message를 출력하도록 요청     
+
+    </script>
+</body>
+</html>

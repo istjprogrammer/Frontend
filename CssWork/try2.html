@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    /* 전체 블럭을 밖으로 빼기 위해서는 shift + tap을 하면 된다 */
+    .parent{
+        width: 200px;
+        height: 150px;
+        background-color: royalblue;
+        margin: 20px;
+        overflow: auto;
+    }
+    /* auto로 overflow를 바꿔주면 자동으로 조절이 된다. */
+
+    .child{
+        width: 300px;
+        height: 100px;
+        background-color: orange;
+    }
+
+    /* 자식이 부모보다 커지면, 디자인이 깨지게 된다. 그래서 overflow 연산자를 활용해서 제어할 수 있다.*/
+    </style>
+</head>
+<body>
+    <div class='parent'>hello
+        <div class='child'></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //nullish 병합 연산자 : 무조건 Null값과 undefined만 거짓으로 처리
+
+        // let n = 0
+        // let num1 = n || 7
+        // console.log(num1)
+
+        let n = 0
+        let num1 = n ?? 7
+        //nullish를 나타내는 기호가 ??인데, 이걸 쓰게 되면 0이라고 출력됨 0은 null 값이 아니므로
+        console.log(num1)
+        console.log(null ?? 1)//이 경우 1이라고 출력
+        console.log(undefined ?? 2)//이 경우 2라고 출력
+        console.log(null ?? 1 ?? 2)//이 경우 1이 출력
+        console.log(false ?? 1)//이 경우 false가 출력
+        console.log(0 ?? 1 ?? 2)//이 경우 0이 출력됨
+        console.log("-------------------------------------")
+        
+        //전개 연산자
+        let a = [1, 2, 3]
+        console.log(a[0], a[1], a[2])//인덱스 : 배열 안에 있는 데이터를 접근하기 위한 순서
+        console.log(...a)//이 경우 a라는 보따리 안에 있는 데이터들을 다 풀어주는 것이다.
+
+        let b = [4, 5, 6]
+        let c = [a, b]//이차원 배열
+        console.log(c)
+
+        let d = [...a, ...b]
+        console.log(d)
+
+        a = {x:1, y:2}
+        b = {y:3, z:4}
+
+        c = {a, b}
+        console.log(c)
+
+        d = {...a, ...b}
+        console.log(d)
+
+        let e = Object.assign({}, a, b)//object는 모든 객체의 최상위 위치에 있는 것이다. 기본원형 즉 모태이다.
+        console.log(e)
+
+        console.log("-------------------------------------")
+
+        //구조 분해 할당 연산자
+        let arr = [1, 2, 3];
+        // x = arr[0]
+        // y = arr[1]
+        // z = arr[2]
+        let [x, y, z] = arr
+        console.log(x, y, z)
+
+        //만약 내가 필요한 데이터만 뽑아서 쓰고 싶다면?
+        ;[, y, z] = arr//이 경우 두 번째와 세번째 데이터만 뽑아서 쓸 수 있다.
+        //그래도 자리는 확보를 시켜놔야 한다.
+        console.log(y, z)
+        ;[ , , z] = arr//만약 세번째 데이터만 받아오고 싶을 때
+        console.log(z)
+
+        ;[x, ...y] = arr//전개 연산자를 활용하면 나머지 데이터는 y에 다 몰아주게 된다.
+        console.log(x, y)
+
+        //배열과 객체의 비교
+        arr = [1, 2, 3, 4, 5]
+        let obj = {a:1, b:2, c:3, d:4, e:5}
+
+        ;[, , , , z] = arr
+        console.log(z)
+        
+        //;{e} = obj
+        //console.log(i)
+        
+        console.log("-------------------------------------")
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

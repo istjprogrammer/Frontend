@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="../vue.global.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+      <div>
+        <button @click="test1">실행 once 없이</button>
+        <button @click.once="test2">실행 once 추가</button>        
+      </div>
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+          methods : {
+            test1(){alert("실행1")},
+            test2(){alert("실행2")}
+          }
+          
+        }).mount("#app")
+    </script>
+</body>
+</html>

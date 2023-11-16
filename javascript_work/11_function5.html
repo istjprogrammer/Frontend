@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnConfirm(){
+           let result = window.confirm("당신의 선택은?")
+            //console.log(result)//확인을 누르면 true가 뜬다.
+            if (result === true){
+                window.alert('확인을 누름')}
+            else{
+                window.alert('취소를 누름')
+            }
+
+        }
+
+        function fnEval(){
+            let ex = "50 * 2 + 3"
+            window.alert(eval(ex))
+            //실제 연산을 하기 위해서는 숫자를 다 빼야 하는데, (상당히 손이 많이 가는 작업이다.) eval을 사용하면 문자열을 숫자로 변환해줌
+
+            let ex2 = "alert('안녕'); alert('hello')"
+            window.alert(eval(ex2))
+        }
+
+        function fnParse() {
+            window.alert(parseInt('33') + parseInt('220'))//eval은 전체를 보는거고 parseint 는 해당되는 코드에만 적용된다. 
+            window.alert(eval('33')+eval('22'))//eval도 되기는 하지만 parseint가 훨씬 더 정교하다.
+            window.alert(parseInt("33abc"))//parseInt는 유효한 숫자만 바꿔주고 나머지는 버린다.
+        }
+
+        const fnFinite = () =>{
+            window.alert(isFinite(123))
+            window.alert(isFinite("123"))//문자열은 크기가 정해져 있지 않다.
+            window.alert(isFinite("홍길동"))
+        }//자바스크립트에서 문자열은 크기를 정할수가 없다. C언어는 포인터로 크기를 정할 수 있다.
+
+        const fnNaN = () => {
+            window.alert(isNaN(1234))
+            window.alert(isNaN("1234"))
+            window.alert(isNaN(12.34))
+            window.alert(isNaN("홍길동"))
+        }
+
+        const fnescape = () => {
+            window.alert(escape('홍길동'))//컴퓨터가 읽을 수 있는 16진수로 바뀐다.
+            window.alert(escape('koera'))//영문자나 숫자는 따로 바뀌지 않는다.
+            window.alert(escape("#$%^& "))//특수문자도 각각의 인코딩 값이 있어서 그걸로 바뀐다.
+            window.alert(escape(" "))//띄어쓰기도 인코딩 값이 있다.
+            console.log(unescape("%uD64D%uAE38%uB3D9"))//인코딩 된 값을 원래 값으로 복구시키는 것
+        }
+    </script>
+</head>
+<body>
+    <input type = 'button' value="confirm test" onclick="fnConfirm()"/><br/><br/><!--fnConfirm을 클릭할 경우 이벤트를 발생하게 하는 것-->
+    <input type = 'button' value="eval test" onclick="fnEval()"/><br/><br/>
+    <input type = 'button' value="parse test" onclick = "fnParse()"/><br/><br/>
+    <input type = 'button' value="isFinite test" onclick="fnFinite()"/><br/><br/>
+    <input type = 'button' value="isNaN test" onclick="fnNaN()"/><br/><br/>
+    <input type = 'button' value="escape test" onclick = "fnescape()"/><br/>
+    <br><br>
+    <input type = 'button' value="뒤로가기" onclick = "history.back()"/>
+</body>
+</html>

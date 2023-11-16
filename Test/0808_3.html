@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="parent">
+        <!-- 주석 -->
+        <div class="child">1</div>
+        텍스트1
+        <div id="child2" class="child">2</div>
+        텍스트2
+        <div id="child3" class="child">3</div>
+    </div>
+</body>
+
+<script>
+    // 두 번째와 세 번째 div 요소 가져오기
+    const child2 = document.getElementById('child2');
+    const child3 = document.getElementById('child3');
+
+    // div 요소를 배열로 저장
+    const divElements = [child2, child3];
+
+    // 역순으로 정렬
+    divElements.reverse();
+
+    // 정렬된 div 요소를 부모 요소에 다시 추가
+    const parent = document.querySelector('.parent');
+    divElements.forEach(div => {
+        parent.appendChild(div);
+    });
+</script>
+
+</html>

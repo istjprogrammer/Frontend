@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* div테그보다는 클래스 이름에 접근하는게 훨씬 더 낫다. 
+        그렇게 하기 위해서 span테그의 첫번째 자식인 딸기를 찾기 위해서는 span: first-child 이렇게 설정해주면 됨
+        .fruits span:first-child{
+            color: red;
+        }
+
+        div는 첫번째가 아니라서 :first-child로는 접근이 안된다
+        .fruits div:first-child{
+            color: orange;
+        }
+
+        .fruits h3:last-child {
+            color: greenyellow;
+        }
+
+        .fruits *:nth-child(3){
+            color: orange;
+        } */
+
+        /* 짝수 줄에 해당하는 것만 색깔을 입히고 싶다면?
+       
+        .fruits *:nth-child(2n) {
+            color: red;
+        }*/
+        
+        /* 홀수 줄에 해당하는 것만 색깔을 입히고 싶다면?
+
+        .fruits *:nth-child(2n-1) {
+            color: blue;
+        } */
+
+
+        /* span 테그만 빼고 빨간색으로 표시하려면?
+        .fruits *:not(span){
+            color:red;
+        } */
+
+        
+    </style>
+    
+
+
+    
+</head>
+<body>
+    <div class ="fruits">
+        
+        <span>딸기</span>
+        <span>수박</span>
+        <div>오렌지</div>
+        <p>망고</p>
+        <h3>사과</h3>
+
+    </div>
+</body>
+</html>

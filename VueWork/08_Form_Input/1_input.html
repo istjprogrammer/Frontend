@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <h2>메모장</h2>
+    
+    <div id="app">
+        <div>입력 값 : <input type="text" v-model="msg1"/></div>
+        <div>결과 : {{msg1}}</div><hr/>
+        <div>
+            입력 값:<br>
+            <textarea rows="10" v-model="msg2"></textarea>
+        </div>
+        <div style="white-space: pre-line;">{{msg2}}</div>
+    </div>    
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+            data(){
+                return {msg1:"", msg2:""}
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

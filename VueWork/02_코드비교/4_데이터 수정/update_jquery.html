@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .count {color:red}
+    </style>
+    <!-- jQuery 추가 -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        count = <span class="count">0</span>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let count = 0;
+
+            setInterval(function() {
+                count++;
+                // jQuery를 사용하여 count 업데이트
+                $(".count").text(count);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="log.js"></script>
+    <script>
+        function fnLoad(){
+            log("첫번째 메세지")
+            log("두번째 메세지")
+        }
+        //반드시 함수로 만들어놓고 body테그에서 호출하는 식으로 해야한다.
+
+        window.onload = function(){
+            fnLoad()
+        }
+        //위와 같이 코드를 작성하면 HTML을 건드리지 않고도 이벤트 처리가 가능하다.
+    </script>
+</head>
+<body><!--body 테그 내에 이벤트 속성을 넣는 것은 권장하지 않음-->
+    <div id="debugConsole" style ="border:1px solid red;"></div><!--예전에는 이렇게 했었다.-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            form{
+            padding: 10px;
+            border: 4px solid transparent;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        form.active{
+            border-color: orange;
+
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            
+            //const inputEl = document.querySelector("input")
+            // inputEl.addEventListener("keydown", ev =>{
+            //     console.log(ev.key)//이 경우 텍스트박스 안에서 키보드 키를 누르면 바로 콘솔창에 뜬다.
+            // })
+            // inputEl.addEventListener("keyup", ev =>{
+            //     console.log(ev.key)//이 경우 텍스트박스 안에서 키보드 키를 눌렀다가 떼면 바로 콘솔창에 뜬다.
+            // })
+
+            // inputEl.addEventListener("keydown", ev =>{
+            //     if(ev.key === 'Enter'){
+            //         console.log(ev.target.value)
+            //     }
+            // })
+                
+            /////////////////////////////////
+
+            const formEl = document.querySelector("form")
+            const inputs = document.forms[0].querySelectorAll("input")
+            
+            inputs.forEach( el => {
+                el.addEventListener("focus", ()=>{
+                    formEl.classList.add('active')
+                })
+
+                el.addEventListener("blur", ()=>{
+                    formEl.classList.remove('active')
+                })
+
+                el.addEventListener("change", ev =>{
+                    console.log(ev.target.value)
+                    //change를 누르면 입력을 하고 탭 키를 쳤을 때 콘솔창에 값이 출력됨
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="text"/>
+    <hr>
+    <form class="active">
+        <fieldset>
+        <!--filedset은 테두리를 그어주는 테그다.-->
+        <legend>로그인</legend>
+        <input type = "text" placeholder="ID"/>
+        <input type = "password" placeholder="PW"/>
+        <button type ="submit">제출</button>
+        <button type ="reset">초기화</button>         
+        </fieldset>
+    </form>
+</body>
+</html>

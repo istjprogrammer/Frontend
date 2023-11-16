@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .wrap{
+        width: 400px;
+        height: 300px;
+        background-color: tomato;
+        position: relative;
+    }
+    .container{
+        width: 300px;
+        background-color: royalblue;
+        position: static;
+        /* static으로 바뀌면 부모의 위치가 잡히지 않아서 전체 화면으로 벗어나게 된다 */
+    }
+    .item{
+        border: 4px dashed red;
+        background-color: orange;
+    }
+    .container .item:nth-child(1){
+        width: 100px;
+        height: 100px;
+    }
+    .container .item:nth-child(2){
+        width: 140px;
+        height: 70px;
+        position: fixed;
+        /* absolute는 부모의 위치다 */
+        bottom: 30px;
+        right: 60px;
+    }
+    /* relative 속성은 현재 자신의 위치에서 30픽셀, 60픽셀 떨어진 위치로 속성을 이동하는 것
+    많이 사용하지는 않는다. */
+    .container .item:nth-child(3){
+        width: 70px;
+        height: 120px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let input = document.getElementById("txtIn")
+            input.addEventListener("keydown", ev=>{
+                document.getElementById("txtkeyCode").value = ev.keyCode
+                document.getElementById("txtCtrl").value = ev.ctrlKey
+                document.getElementById("txtShift").value = ev.shiftKey
+            }, false)
+        }
+    </script>
+</head>
+<body>
+    키보드 입력 : <input type="text" id="txtIn"/>
+    <br><br>
+    <hr>
+    키코드 값 : <input type="text" id="txtkeyCode" readonly/>
+    <br><br>
+    Ctrl 값 : <input type="text" id="txtCtrl" readonly/>
+    <br><br>
+    Shift 값 : <input type="text" id="txtShift" readonly/>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function fnOpen(){
+            window.open("zipcode.html", "", "left=100, top=100, width=320, height=320")//url, target, feature
+            // document.f.addr.value = addr//자바스크립트에서 html까지 접근할 수 있다 (객체를 활용해서)
+        }
+
+        function showwatch(){
+            let today = new Date()
+            let msg = `현재 시간은 ${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초 입니다.`
+            document.f.watch.value=msg;
+            
+            // setTimeout(showwatch, 1000) //내가 나를 호출하는 재귀함수가 된다.
+        }
+
+        let timer;
+        function onStart(){
+            // setTimeout(showwatch, 1000)//재귀함수가 아니라서 반복기능이 없다.
+            timer = setInterval(showwatch, 1000)//재귀함수가 아니더라도 계속해서 호출됨
+        }
+
+        function onStop(){
+            clearTimeout(timer)
+        }
+
+        function onMove(){
+           if(document.f.chk.checked){
+            location.href = "11_function5.html"
+           }
+        }
+
+        function onReload(){
+            location.reload()
+        }
+
+        function onImgInfo(){
+            div = document.getElementById("info")
+            div.innerHTML = "첫번째 이미지의 폭 : " + 
+                                                    document.images[0].width + "픽셀" + "<br>"
+            div.innerHTML += "첫번째 이미지의 높이 : " + 
+                                                    document.images[0].height + "픽셀" + "<br>"                                        
+        }
+
+        function onImgSize(){
+            document.images[0].width = 300;
+            document.images[0].width = 400;
+        }
+
+    </script>
+</head>
+<body onload="showwatch()"><!--body 테그에서 바로 실행되도록 하는 함수-->
+<body>
+    <!--form 테그는 html에서 데이터를 묶어주기 위한 테그다.-->
+    <form name="f">
+        <input type="button" value="주소검색" onclick="fnOpen()"/><br><br>
+        <input type="type" name="addr"/>
+        <hr/>
+        <input type="text" name="watch" size="50"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type = "button" value="현재 시간 시작" onclick="onStart()"/>
+        <input type = "button" value="현재 시간 중지" onclick="onStop()"/>
+        <hr/>
+        
+        
+        <input type = "checkbox" name="chk" onclick="onMove()">11_function5.html로 이동
+        <br/>
+        <input type="button" value="새로고침" onclick ="onReload()"/>
+
+        <hr/>
+
+        <table>
+            <tr>
+                <td>
+                    <img src = "image/jennie.jpg"/><br>
+                </td>
+                <td>
+                    <img src = "image/lisa.jpg"/><br>
+                </td>
+            </tr>
+        </table>
+        
+        <input type="button" value="정보 보기" onclick="onImgInfo()"/>
+        <input type="button" value="이미지 키우기" onclick="onImgSize()"/>
+        <div id="info"></div>
+    </form>
+</body>
+</html> 

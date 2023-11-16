@@ -1,0 +1,157 @@
+body{
+    background-image: url(images/bg.jpg);
+    /* viewport의 높이를 설정할때 아래와 같이 vh라는 단위를 활용한다. */
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    padding: 50px 0;
+}
+
+.container .heroes{
+    display: flex;
+    /* 자동으로 줄바꿈을 할 수 있게끔 만들어주려면? 아래와 같이 flex-wrap을 쓰면 됨*/
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 만약 가로길이를 설정하지 않으면 전체가 설정이 된다. */
+    /* max-width: 700px; */
+    /* 폭을 고정시켜서 늘리거나 줄여도 변동되는 것을 줄일 수 있다 */
+    margin: 0 auto;
+    max-width: 660px;
+    padding: 40px 20px;
+}
+
+.container .heroes .hero{
+    width: 80px;
+    height: 84px;
+    background-color: black;
+    margin: 4px;
+    border: 3px solid white;
+    /* 두께, 실선, 선 색상 */
+    transform: skewX(-11deg);
+    /* 마우스를 올렸을 때 기울임이 유지되게 하려면? hover에 transform 추가 */
+    border-radius: 10px;
+    /* padding이나 테두리를 값을 줘도 모양을 유지하려면 box-sizing을 사용함 */
+    box-sizing: border-box;
+    /* 배경 색상과 그림이 속성별로 따로따로 바뀌게 하려면? */
+    transition: transform 0.7s; background-color: 0.5s;
+    /* 넘치는 부분을 자르기 위해서는 overflow : hidden을 활용한다 */
+    overflow: hidden;
+}
+
+/* 마우스를 올렸을 때 크기가 커지게 하고 싶으면 hover를 사용한다 */
+.container .heroes .hero:hover{
+    transform: scale(1.3) skewX(-11deg);
+    background-color: pink;
+    /* 맨 위에 튀어나오게 하기 위해서 z-index를 사용한다 */
+    z-index: 1;
+}
+
+.container .heroes .hero .image{
+    width: 140%;
+    height: 100%;
+    background-size: 90px; 
+    /* 가운데로 정렬하기 위해서는 */
+    background-position: center;
+    /* 배경을 반복하지 않게 하기 위해서는 */
+    background-repeat: no-repeat;
+    transform: translateX(-16px) skewX(11deg);
+}
+
+.container .heroes .hero:nth-child(1) .image{
+    background-image: url(images/hero1.png);
+}
+
+.container .heroes .hero:nth-child(2) .image{
+    background-image: url(images/hero2.png);
+}
+.container .heroes .hero:nth-child(3) .image{
+    background-image: url(images/hero3.png);
+}
+.container .heroes .hero:nth-child(4) .image{
+    background-image: url(images/hero4.png);
+}
+.container .heroes .hero:nth-child(5) .image{
+    background-image: url(images/hero5.png);
+}
+.container .heroes .hero:nth-child(6) .image{
+    background-image: url(images/hero6.png);
+}
+.container .heroes .hero:nth-child(7) .image{
+    background-image: url(images/hero7.png);
+}
+.container .heroes .hero:nth-child(8) .image{
+    background-image: url(images/hero8.png);
+}
+.container .heroes .hero:nth-child(9) .image{
+    background-image: url(images/hero9.png);
+}
+.container .heroes .hero:nth-child(10) .image{
+    background-image: url(images/hero10.png);
+}
+.container .heroes .hero:nth-child(11) .image{
+    background-image: url(images/hero11.png);
+}
+.container .heroes .hero:nth-child(12) .image{
+    background-image: url(images/hero12.png);
+}
+.container .heroes .hero:nth-child(13) .image{
+    background-image: url(images/hero13.png);
+}
+.container .heroes .hero:nth-child(14) .image{
+    background-image: url(images/hero14.png);
+}
+.container .heroes .hero:nth-child(15) .image{
+    background-image: url(images/hero15.png);
+}
+.container .heroes .hero:nth-child(16) .image{
+    background-image: url(images/hero16.png);
+}
+.container .heroes .hero:nth-child(17) .image{
+    background-image: url(images/hero17.png);
+}
+.container .heroes .hero:nth-child(18) .image{
+    background-image: url(images/hero18.png);
+}
+.container .heroes .hero:nth-child(19) .image{
+    background-image: url(images/hero19.png);
+}.container .heroes .hero:nth-child(20) .image{
+    background-image: url(images/hero20.png);
+}.container .heroes .hero:nth-child(21) .image{
+    background-image: url(images/hero21.png);
+}.container .heroes .hero:nth-child(22) .image{
+    background-image: url(images/hero22.png);
+}.container .heroes .hero:nth-child(23) .image{
+    background-image: url(images/hero23.png);
+}.container .heroes .hero:nth-child(24) .image{
+    background-image: url(images/hero24.png);
+}.container .heroes .hero:nth-child(25) .image{
+    background-image: url(images/hero25.png);
+}.container .heroes .hero:nth-child(26) .image{
+    background-image: url(images/hero26.png);
+}.container .heroes .hero:nth-child(27) .image{
+    background-image: url(images/hero27.png);
+}.container .heroes .hero:nth-child(28) .image{
+    background-image: url(images/hero28.png);
+}.container .heroes .hero:nth-child(29) .image{
+    background-image: url(images/hero29.png);
+}.container .heroes .hero:nth-child(30) .image{
+    background-image: url(images/hero30.png);
+}.container .heroes .hero:nth-child(31) .image{
+    background-image: url(images/hero31.png);
+}.container .heroes .hero:nth-child(32) .image{
+    background-image: url(images/hero32.png);
+}
+
+.container .logo{
+    max-width: 300px;
+    /* 가운데 정렬을 하고 싶다면? margin을 auto로 설정 */
+    margin: 0 auto;
+}
+
+.container .logo img{
+    width: 100%;
+}

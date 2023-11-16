@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h2>필터링</h2>
+    
+    <div id="app">
+        <div id = "list">
+            <div>
+                search = <input type ="text" v-model="value"/>
+            </div>
+            <ul v-for="user in search()">
+                <li>{{user}}</li>
+            </ul>
+        </div>
+    </div>    
+
+    <script>
+        let data = {list : ["김부장", "이도규", "신세라" , "최상호", "김준구"],
+                    value:""}
+        const {createApp} = Vue
+        createApp({
+            data(){
+                return data;
+            },
+            methods : {
+                search(){
+                    if(this.value.length==0)
+                        return this.list;
+                 return this.list.filter((name)=>{
+                       return name.indexOf(this.value) != -1
+                    })
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

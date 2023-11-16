@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "jsx": "react"
+    },
+    "exclude": ["node_modules"]
+}

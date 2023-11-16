@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1> v-show </h1>
+    <ul>
+        <li>보이기, 숨기기( display : *, display : "none" )</li>
+        <li>태그는 삭제하지 않고 그대로 존재</li>
+    </ul>
+    <div id="app">
+
+        <!-- 클릭을 하면 "onToggle"이라는 함수를 실행하겠다. -->
+        <!-- v-on: -> @ 로 생략 -->
+        <button @click="onToggle">
+            토글
+        </button>
+
+        <!-- visible의 조건이 true냐 false냐에 따라 태그 내용을 처리함 -->
+        <div v-show="visible">
+            보이고 숨기기
+        </div>
+    </div>
+
+    <script>
+        const {createApp} = Vue
+        createApp({
+            data() {
+                return {visible : true}
+            },
+            methods : {
+                onToggle() {
+                    // 토글 연산자, bool 타입
+                    this.visible = !this.visible
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

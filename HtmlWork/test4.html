@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--이동의 기능-->
+    <a href="http://www.w3schools.com">w3schools.com</a><br/>
+    <a href="sub/sub1.html">sub1.html</a><br/> <!--상대경로-->
+    <a href="http://127.0.0.1:5500/sub/sub2.html">sub2.html</a><br/> <!--절대경로-->
+    <a href="/sub/sub2.html">sub2.html</a><br/> <!--슬래시 앞 부분은 생략 가능함-->
+
+    <a href="sub/sub1.html" target="_self">sub1.html</a><br/> <!--타겟 self은 새로운 창에서 페이지를 띄우는 것을 의미한다.-->
+    <a href="sub/sub2.html" target="_blank">sub2.html</a><br/> <!--타겟 blank는 현재 창에서 페이지를 띄우는 것을 의미한다.-->
+    
+    <ul>
+        <li><a href="http://127.0.0.1:5500/sub/sub2.html#first">첫 번째 주제</a></li><!--#first로 첫번째 주제로 이동한다는 세부위치를 지정-->
+        <li><a href="http://127.0.0.1:5500/sub/sub2.html#second">두 번째 주제</a></li>
+        <li><a href="http://127.0.0.1:5500/sub/sub2.html#third">세 번째 주제</a></li>
+    </ul>
+    <hr/>
+    <!--하이퍼링크가 다양한 목적으로 사용되는 경우 : 프로그램 실행, 다운로드 등 -->
+    <a href="resource/html.zip">다운로드</a><br/>
+    <a href="resource/sample.mp4" target="_blank">동영상 실행</a><br/>
+    <a href="mailto:netsong7@naver.com">netsong7에게 메일 보내기</a><br/><!--해당되는 사람에게 바로 메일을 보낼 수 있도록 실행하는 기능-->
+    <hr/><br/>
+    <!--이미지 맵: 특정 부분을 클릭하면 원하는 페이지로 이동하게끔 하는 것
+    
+        필요한 것: 좌표
+        원으로 좌표를 잡을 때는 중심점의 좌표가 필요하다.
+        중심점의 x좌표와 y좌표가 필요하다.
+        그리고 원의 크기를 결정하기 위해서 반지름의 크기까지 알면 원을 하나 완성시킬 수 있다.
+        
+        사각형으로 좌표를 잡을 때는 왼쪽 상단 좌표와 오른쪽 하단 좌표만 알면 된다.
+        
+        원과 사각형으로만 실습을 해볼 예정
+
+    -->
+    <img src="images/Desert.jpg" alt="" usemap="#Desert"/>
+
+    <!--
+        shape는 원, 사각형 같은 모양을 지정하는 곳, 
+        coords는 중심점, 반지름 같은 위치를 입력하는 곳-->
+    <map name="Desert">
+        <area  
+        shape="circle" 
+        coords="590, 330, 150" 
+        href="https://www.naver.com" target="_blank"/>
+
+        <area
+        shape="rect"
+        coords="760,310,1015,333"
+        href="https://www.youtube.com" target="_blank"/>
+    </map>
+</body>
+</html>

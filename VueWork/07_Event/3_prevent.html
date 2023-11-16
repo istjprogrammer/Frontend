@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="../vue.global.js"></script>
+    
+</head>
+<body>
+
+    <div id="app">
+      <a href="https://youtube.com" @click="addMessage">prevent 사용 X </a><br>
+      <a href="https://youtube.com" @click.prevent="addMessage">prevent 사용 O </a><br>
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+          methods : {
+            addMessage(){
+              alert("실행됨");
+            }
+          }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

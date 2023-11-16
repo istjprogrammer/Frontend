@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Vue.js 추가 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>내용 바인딩</h1>
+    
+    <div id ="app">
+        <!--<div v-text="message"></div>-->
+        <div v-html="message"></div>
+    </div>
+
+    <script>
+        const {createApp} = Vue
+        createApp({
+            data(){
+               return {message : "test_", count:1} 
+            },
+            created : function(){
+                this.addCount()
+            },
+            methods : {
+                addCount(){
+                    setInterval(()=>{
+                        this.message="<p>message= " + this.message + 
+                            ", count=" +this.count + "</p>";
+                        this.count++;
+                    }, 1000)
+                }
+            }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>

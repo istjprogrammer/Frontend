@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .count {color:red}
+    </style>
+</head>
+<body>
+    <div id="app">
+        count = <span class="count">0</span>
+    </div>
+
+    <script>
+        let count = 0;
+        setInterval(()=>{
+            count++;
+            const countElement = document.querySelector(".count");
+            countElement.textContent = count;
+        }, 500);
+    </script>
+</body>
+</html>

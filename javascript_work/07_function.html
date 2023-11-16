@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*매개 변수 설명 코드*/
+
+        // function line(cnt, style){//매개변수(parameter)
+        //     for(let i = 0 ; i<cnt; i++){//아래에 입력을 한 숫자만큼 별이 출력된다
+        //         document.write(style)//두번째 매개변수를 입력할 경우 호출시 두번째 값으로 입력한게 반복적으로 출력됨
+        //     }
+        // document.write("<br>")
+        // }
+        
+        // line(30, '*')//함수 호출, 실인자(Argument), 매개변수가 존재할 경우 무조건 값이 있어야 한다.
+        // document.write("고객 관리 프로그램<br>")
+        // line(20, '-')//괄호 안에 들어가는 숫자가 실 인자(실 변수)라고 한다.
+        // document.write("1. 등록<br>")
+        // document.write("2. 검색<br>")
+        // line(10, '=')
+        
+        /*두 수의 합계를 구하는 코드*/
+
+        function sum(num1, num2){//서로 다른 메모리에 있어서 변수명이 같아도 상관이 없다.
+            let num3 = num1 + num2//num 3는 지역변수로 선언됨(블럭 내부에 있기 때문에)
+            return num3//이렇게 되면 num3를 아래로 내려보낼 수 있다.
+        }
+
+        let num1=1
+        let num2=10
+
+        document.write("<h2>두 수의 합계</h2>")
+        let num3 = sum(num1, num2)
+        document.write("결과 : " + num3)
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Vue.js 추가-->
+    <script src="../vue.global.js"></script>
+    
+</head>
+<body>
+
+    <div id="app">
+      <div @click="parent">
+        <button @click="addMessage">실행, stop없이</button>
+        <button @click.stop="addMessage">실행, stop추가(버블링 방지를 위해)</button>
+        <div v-html="message"></div>
+      </div>
+    </div>
+
+    <script>
+        const {createApp} = Vue 
+        createApp({
+          data(){
+            return {message:""}
+          },
+          methods : {
+            addMessage(){
+              this.message += "addMessage 실행<br>"
+            },
+
+            parent(){
+              this.message +="parent 실행<br>"
+            }
+          }
+        }).mount("#app")
+    </script>
+
+</body>
+</html>
