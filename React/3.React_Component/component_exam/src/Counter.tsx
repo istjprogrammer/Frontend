@@ -1,4 +1,5 @@
 import * as React from 'react';
+import CountDisplay from './CountDisplay';
 
 interface CounterProps{
     title: string;
@@ -59,7 +60,7 @@ class Counter extends React.Component<CounterProps, CounterState>{
         console.log("Mounting & Updating: In render")
         return (<div>
                     <h1>{this.props.title}</h1>
-                    <h3>Count: {this.state.num}</h3>
+                    {!this.state.hideCount && <CountDisplay count={this.state.num}/>}
                     <button onClick={this.handleClick}>Plus</button>
                     <button onClick={this.handleToggle}>Toggle Count</button>
                 </div>);

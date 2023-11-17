@@ -23,6 +23,7 @@ Component<br>
 - 그 외 툴을 모두 직접 설치
 
 ## (2) CRA (Create React App)을 이용하는 방법
+npx create-react-app my-app --template typescript
 
 ## (3) Online Code Tool을 이용하는 방법
 코드 샌드박스를 사용하면 가장 쉽게 할 수 있다.
@@ -221,3 +222,53 @@ componentWillUnmount
 
 ### 4) Process
 props => component => render() => Element => 비교 알고리즘 => Virtual DOM => Real DOM
+
+# 8. Function Component
+리엑트의 새로운 전환점이 되는 부분(오늘의 핵심)
+<br>
+
+## (1) Hooks
+Hook은 갈고리, 가로채다 라는 뜻이 있다.<br>
+기존 클래스 컴포넌트는 view와 로직이 붙어있기 때문에 이것을 잘라서 분리시키고, 로직은 로직만의 자유로움을 가질 수 있게 하는 역할이 Hook의 역할이다.<br>
+
+View 역할을 Function Component가 담당하는 것<br>
+Hooks란 컴퍼넌트 외부로 렌더 로직을 분리하기 위한 수단으로 로직의 재사용성을 높이며 Function Component에 더 적합한 방식이다.
+
+컴포넌트로 분리할 때 뭘 분리할 것인가?<br>
+결국 view와 로직을 분리하는 것이다. =>보여지는 부분과 처리하는 부분을 나누는 것(Like MVC패턴)
+
+## (2) Hooks API
+### (1) useState
+- Function Component는 기본적으로 상태를 관리할 수 있는 컴포넌트가 아니다.<br>
+즉 stateless 방식인 것.<br>
+상태를 저장하려면, 기억하고 저장할 수 있는 공간이 있어야 하는데 데이터를 계속 유지할 수 있는 메모리 공간은 Heap이다.<br>
+Heap은 객체가 만들어져야 쓸 수 있는데, 객체는 class고, Function은 스텍이기에 지속적으로 쓸 수는 없다.
+- Stateless => Stateful(Stateless를 Stateful하게 바꿔주는게 useState의 역할이다.)
+- [상태값, 상태변경함수] = useState(초기값)
+### (2) useEffect
+- Side Effect : 메인 디쉬에 딸려나오는 사이드 메뉴같은 느낌이다.
+    - 주 기능에서 필요한 기능을 주변에서 실행해야 하는 것이 Side Effect다.
+    - [역할]네트워크 요청 
+    - [역할]직접적인 DOM 변경
+    - [역할]로깅(어떤 작업에 대한 정보를 표시하는 것)
+    - [역할]타이머 설정
+    - [역할]데이터 구독(ex : 크롤링)
+- DOM에 반영된 이후 필요한 작업들을 어디에선가 처리를 해줘야 하는데, 이 때 이것들을 처리해주는 API가 useEffect이다.
+- [사용방법] useEffect(함수, [의존성])
+- 모든 Render마다 계속 Effect가 동작을 한다.
+- 의존성은 Effect의 발동조건이다.(Effect가 작동할 수 있는 조건을 의미) : 배열 내의 데이터가 변경되었을 때만 Effects 실행
+- 모든 Render마다 ->의존성 체크 -> clean up 동작 -> Effects 동작
+- 의존성은 Effects 발동 조건 : 배열 내의 데이터가 변경되었을 때 Effect 실행
+- Class Component와 life cycle 비교
+    - Class Component 
+        - Mounting : constructor => render => componentDidMount
+        - Updating : render => componentDidUpdate
+        - Unmounting : componentWillUnmounting
+    - Function Component
+        - Mounting / Updating : Run(function body) => Effects 동작
+        - Unmounting : clean-up 동작
+### (3) useMemo
+### (4) useCallback
+
+<br>
+앞으로 이렇게 4가지를 가지고 실습을 진행할 예정!
