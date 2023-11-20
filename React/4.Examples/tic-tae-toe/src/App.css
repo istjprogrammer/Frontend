@@ -1,0 +1,9 @@
+.game{
+  display:flex;
+  flex-direction: row;
+  /*보드가 나타나고 그 옆에 정보가 나타나는 형태*/
+}
+
+.game-info{
+  margin-left: 20px;
+}

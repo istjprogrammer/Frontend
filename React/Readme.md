@@ -268,7 +268,8 @@ Heap은 객체가 만들어져야 쓸 수 있는데, 객체는 class고, Functio
         - Mounting / Updating : Run(function body) => Effects 동작
         - Unmounting : clean-up 동작
 ### (3) useMemo
+- useMemo(함수, [의존성])
+- return value를 memoization한다.
 ### (4) useCallback
-
-<br>
-앞으로 이렇게 4가지를 가지고 실습을 진행할 예정!
+- useCallback(함수, [의존성])
+- function 자체를 memoization한다.
