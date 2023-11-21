@@ -30,7 +30,7 @@ export default class Square extends Component {
 
 //함수형 컴포넌트
 const Square = (props) => {
-    const [value, setValue] = useState(null);
+    //const [value, setValue] = useState(null);
   
     return (
       <button className='square' onClick={() => props.onClick()}>
